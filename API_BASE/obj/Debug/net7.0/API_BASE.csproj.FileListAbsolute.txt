@@ -1,0 +1,6 @@
+C:\Users\IT\source\repos\Proyectos\API_BASE\API_BASE\obj\Debug\net7.0\API_BASE.csproj.AssemblyReference.cache
+C:\Users\IT\source\repos\Proyectos\API_BASE\API_BASE\obj\Debug\net7.0\API_BASE.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\IT\source\repos\Proyectos\API_BASE\API_BASE\obj\Debug\net7.0\API_BASE.AssemblyInfoInputs.cache
+C:\Users\IT\source\repos\Proyectos\API_BASE\API_BASE\obj\Debug\net7.0\API_BASE.AssemblyInfo.cs
+C:\Users\IT\source\repos\Proyectos\API_BASE\API_BASE\obj\Debug\net7.0\API_BASE.csproj.CoreCompileInputs.cache
+C:\Users\IT\source\repos\Proyectos\API_BASE\API_BASE\obj\Debug\net7.0\API_BASE.MvcApplicationPartsAssemblyInfo.cache
