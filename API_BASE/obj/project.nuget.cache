@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "C2LgD1bb5VXLLZZbnDw8GBHlMS6k/Y5/WcYrBsE+Fb8TptfjC5cXDujm36+4HFy8DDJhVIulBdfZ4fCX3VvScw==",
+  "dgSpecHash": "EThbXCrz5EQO567lewxZI4E1LepD5Fo0l5EAwYPqfj03phUV0m9EuM3bAdZLDx0lUviqZCrpqxiLCX6I0ZzevA==",
   "success": true,
   "projectFilePath": "C:\\Users\\IT\\source\\repos\\Proyectos\\API_BASE\\API_BASE\\API_BASE.csproj",
   "expectedPackageFiles": [
@@ -39,6 +39,7 @@
     "C:\\Users\\IT\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
     "C:\\Users\\IT\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
     "C:\\Users\\IT\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "C:\\Users\\IT\\.nuget\\packages\\servicestack.interfaces\\8.3.0\\servicestack.interfaces.8.3.0.nupkg.sha512",
     "C:\\Users\\IT\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
     "C:\\Users\\IT\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
     "C:\\Users\\IT\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",

@@ -63,10 +63,5 @@ namespace Persistence.Repositories
             _context.Entry(entity).State = EntityState.Modified;
             await _context.SaveChangesAsync();
         }
-
-        public Task<IEnumerable<TResult>> ExecuteRawSqlAsync<TResult>(string sql, params object[] parameters) where TResult : class
-        {
-            return await _context.Set<TResult>().FromSqlRaw(sql, parameters).ToListAsync();
-        }
     }
 }

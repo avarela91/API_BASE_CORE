@@ -13,7 +13,6 @@ namespace Application.Interfaces.Repositories
         Task<T> GetByIdAsync(int id);
         Task AddAsync(T entity);
         Task UpdateAsync(T entity);
-        Task<IEnumerable<TResult>> ExecuteRawSqlAsync<TResult>(string sql, params object[] parameters) where TResult : class;
 
     }
 }

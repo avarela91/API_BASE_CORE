@@ -17,18 +17,28 @@ namespace API_BASE.Controllers
             _userService = userService;
         }
 
-        [HttpGet]
+        [HttpGet("GetAllUsers")]
         public async Task<IActionResult> GetAllUsers()
         {
             var items = await _userService.GetAllUsersAsync(false);
             return Ok(items);
         }
+       [HttpGet("GetUserById")]
+        public async Task<IActionResult> GetUserById(int id)
+        {
+            var user = await _userService.GetUserByIdAsync(id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+            return Ok(user);
+        }
 
-        [HttpGet("GetUserPermissions")]
+        /*[HttpGet("GetUserPermissions")]
         public async Task<IActionResult> GetUserPermissions([FromQuery] string query)
         {
             var userPermissions = await _userService.ExecuteSqlAsync<UserPermission>(query);
             return Ok(userPermissions);
-        }
+        }*/
     }
 }

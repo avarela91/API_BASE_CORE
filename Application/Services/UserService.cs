@@ -35,10 +35,5 @@ namespace Application.Services
         {
            await _userRepository.UpdateAsync(user);
         }
-
-        public async Task<IEnumerable<UserPermission>> ExecuteSqlAsync<UserPermission>(string sql, params object[] parameters)
-        {
-            return await _userRepository.ExecuteRawSqlAsync<UserPermission>(sql, parameters);
-        }
     }
 }

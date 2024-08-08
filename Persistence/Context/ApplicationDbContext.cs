@@ -1,8 +1,10 @@
 ﻿using Domain.Entities;
 using Domain.Entities.CustomAttributes;
 using Microsoft.EntityFrameworkCore;
+using ServiceStack;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -16,8 +18,8 @@ namespace Persistence.Context
         {
         }
 
-        public DbSet<Item> Item { get; set; }
-        public DbSet<User> User { get; set; }
+        public DbSet<Item> Items { get; set; }
+        public DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -39,11 +41,24 @@ namespace Persistence.Context
                     var connectionName = connectionNameAttribute.ConnectionName;
                     if (!string.IsNullOrEmpty(connectionName))
                     {
-                        modelBuilder.Entity(entityType.ClrType)
-                            .ToView(entityType.ClrType.Name)
-                            .HasNoKey();
+                        var primaryKeyProperty = entityType.ClrType.GetProperties()
+                            .FirstOrDefault(p => p.GetCustomAttribute(typeof(KeyAttribute))!=null);
+
+                            if (primaryKeyProperty != null)
+                            {
+                                modelBuilder.Entity(entityType.ClrType)
+                               .ToTable(entityType.ClrType.Name)
+                               .HasKey(primaryKeyProperty.Name);
+                            }
+                            else
+                            {
+                                modelBuilder.Entity(entityType.ClrType)
+                               .ToTable(entityType.ClrType.Name)
+                               .HasNoKey();
+                            }
+
+                        }
                     }
-                }
             }
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

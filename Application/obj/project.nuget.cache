@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "rUvdCaPPml1JgmOttLVILcPTaNg1N9OER3dQySU0/JU1eYbeyHXt/SmnxU0FEEOWtpK3naSfL4dKsIz5DejCrg==",
+  "dgSpecHash": "eRjLwgR7Mkg1IgmDI3o+occPcScm7Ci60Dk/rSdZZKBbLOHmr6IifsFnJZYj8IQwdRsef8a2oBxDHUve+N5UFA==",
   "success": true,
   "projectFilePath": "C:\\Users\\IT\\source\\repos\\Proyectos\\API_BASE\\Application\\Application.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\IT\\.nuget\\packages\\servicestack.interfaces\\8.3.0\\servicestack.interfaces.8.3.0.nupkg.sha512"
+  ],
   "logs": []
 }

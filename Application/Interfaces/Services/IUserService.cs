@@ -14,6 +14,5 @@ namespace Application.Interfaces.Services
         Task<User> GetUserByIdAsync(int id);
         Task AddUserAsync(User user);
         Task UpdateUserAsync(User user);
-        Task<IEnumerable<UserPermission>> ExecuteSqlAsync<UserPermission>(string sql, params object[] parameters);
     }
 }

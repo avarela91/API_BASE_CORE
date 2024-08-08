@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "OZuJ4lJ/1deqIBFL6AExNr/UACirCdaCXIRWOaIIAXrd7ZBQHFB+H2VAhUvsvC3CxtPnBHSj7tLr6o8ZDeiM7Q==",
+  "dgSpecHash": "ULJigIPJL+K9LLXqfpTsr57Uf+bFArSUkJbg4WCk5ZrKxH331X20CSBqxHfBWZ4hyiwjXVKOfSR+vExmZBs0rQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\IT\\source\\repos\\Proyectos\\API_BASE\\Persistence\\Persistence.csproj",
   "expectedPackageFiles": [
@@ -41,6 +41,7 @@
     "C:\\Users\\IT\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
     "C:\\Users\\IT\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\IT\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\IT\\.nuget\\packages\\servicestack.interfaces\\8.3.0\\servicestack.interfaces.8.3.0.nupkg.sha512",
     "C:\\Users\\IT\\.nuget\\packages\\system.codedom\\4.4.0\\system.codedom.4.4.0.nupkg.sha512",
     "C:\\Users\\IT\\.nuget\\packages\\system.configuration.configurationmanager\\6.0.1\\system.configuration.configurationmanager.6.0.1.nupkg.sha512",
     "C:\\Users\\IT\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.1\\system.diagnostics.diagnosticsource.6.0.1.nupkg.sha512",

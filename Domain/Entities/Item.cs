@@ -1,4 +1,5 @@
 ﻿using Domain.Entities.CustomAttributes;
+using ServiceStack.DataAnnotations;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -11,6 +12,7 @@ namespace Domain.Entities
     [ConnectionName("DefaultConnection")]
     public class Item
     {
+        [PrimaryKey]
         public string ItemCode { get; set; }
         public string ItemName { get; set; }
     }

@@ -7,8 +7,19 @@
   "targets": {
     ".NETCoreApp,Version=v7.0": {
       "Domain/1.0.0": {
+        "dependencies": {
+          "ServiceStack.Interfaces": "8.3.0"
+        },
         "runtime": {
           "Domain.dll": {}
+        }
+      },
+      "ServiceStack.Interfaces/8.3.0": {
+        "runtime": {
+          "lib/net6.0/ServiceStack.Interfaces.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "8.3.0.0"
+          }
         }
       }
     }
@@ -18,6 +29,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "ServiceStack.Interfaces/8.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-prWUNgtvkr/JSDOlOd4+uA8WimTGByJxZUY2l1OSVcmKflGqCyRqrZMXa5HqA+wMzYJnm696Vv8cap3oIBT7AQ==",
+      "path": "servicestack.interfaces/8.3.0",
+      "hashPath": "servicestack.interfaces.8.3.0.nupkg.sha512"
     }
   }
 }

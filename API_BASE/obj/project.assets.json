@@ -604,6 +604,15 @@
           }
         }
       },
+      "ServiceStack.Interfaces/8.3.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/ServiceStack.Interfaces.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/ServiceStack.Interfaces.dll": {}
+        }
+      },
       "Swashbuckle.AspNetCore/6.4.0": {
         "type": "package",
         "dependencies": {
@@ -1108,6 +1117,9 @@
       "Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "ServiceStack.Interfaces": "8.3.0"
+        },
         "compile": {
           "bin/placeholder/Domain.dll": {}
         },
@@ -2233,6 +2245,21 @@
         "runtimes/win/lib/netcoreapp3.1/Microsoft.Win32.SystemEvents.dll",
         "runtimes/win/lib/netcoreapp3.1/Microsoft.Win32.SystemEvents.xml",
         "useSharedDesignerContext.txt"
+      ]
+    },
+    "ServiceStack.Interfaces/8.3.0": {
+      "sha512": "prWUNgtvkr/JSDOlOd4+uA8WimTGByJxZUY2l1OSVcmKflGqCyRqrZMXa5HqA+wMzYJnm696Vv8cap3oIBT7AQ==",
+      "type": "package",
+      "path": "servicestack.interfaces/8.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net472/ServiceStack.Interfaces.dll",
+        "lib/net6.0/ServiceStack.Interfaces.dll",
+        "lib/net8.0/ServiceStack.Interfaces.dll",
+        "lib/netstandard2.0/ServiceStack.Interfaces.dll",
+        "servicestack.interfaces.8.3.0.nupkg.sha512",
+        "servicestack.interfaces.nuspec"
       ]
     },
     "Swashbuckle.AspNetCore/6.4.0": {
