@@ -70,3 +70,5 @@ Thumbs.db
 # Archivos de JetBrains Rider
 .idea/
 *.sln.iml
+
+.vs/

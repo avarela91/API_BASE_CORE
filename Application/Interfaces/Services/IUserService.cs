@@ -1,4 +1,5 @@
-﻿using Application.Services;
+﻿using Application.Interfaces.Repositories;
+using Application.Services;
 using Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -14,5 +15,7 @@ namespace Application.Interfaces.Services
         Task<User> GetUserByIdAsync(int id);
         Task AddUserAsync(User user);
         Task UpdateUserAsync(User user);
+        Task<IEnumerable<UserPermission>> GetUserPermissionsAsync(string userName, string codeModule);
+
     }
 }

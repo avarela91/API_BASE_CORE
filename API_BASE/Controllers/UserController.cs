@@ -88,6 +88,12 @@ namespace API_BASE.Controllers
             }
         }
 
+        [HttpGet("permissions")]
+        public async Task<IActionResult> GetUserPermissionsAsync(string userName, string codeModule)
+        {
+            var permissions = await _userService.GetUserPermissionsAsync(userName, codeModule);
+            return Ok(permissions);
+        }
         /*[HttpGet("GetUserPermissions")]
         public async Task<IActionResult> GetUserPermissions([FromQuery] string query)
         {
