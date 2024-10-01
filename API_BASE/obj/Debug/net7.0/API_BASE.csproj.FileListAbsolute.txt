@@ -13,6 +13,7 @@ C:\Users\IT\source\repos\Proyectos\API_BASE\API_BASE\bin\Debug\net7.0\API_BASE.d
 C:\Users\IT\source\repos\Proyectos\API_BASE\API_BASE\bin\Debug\net7.0\API_BASE.pdb
 C:\Users\IT\source\repos\Proyectos\API_BASE\API_BASE\bin\Debug\net7.0\Azure.Core.dll
 C:\Users\IT\source\repos\Proyectos\API_BASE\API_BASE\bin\Debug\net7.0\Azure.Identity.dll
+C:\Users\IT\source\repos\Proyectos\API_BASE\API_BASE\bin\Debug\net7.0\Dapper.dll
 C:\Users\IT\source\repos\Proyectos\API_BASE\API_BASE\bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll
 C:\Users\IT\source\repos\Proyectos\API_BASE\API_BASE\bin\Debug\net7.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\IT\source\repos\Proyectos\API_BASE\API_BASE\bin\Debug\net7.0\Microsoft.Data.SqlClient.dll

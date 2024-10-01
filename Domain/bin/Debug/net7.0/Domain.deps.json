@@ -8,10 +8,19 @@
     ".NETCoreApp,Version=v7.0": {
       "Domain/1.0.0": {
         "dependencies": {
+          "Dapper": "2.1.35",
           "ServiceStack.Interfaces": "8.3.0"
         },
         "runtime": {
           "Domain.dll": {}
+        }
+      },
+      "Dapper/2.1.35": {
+        "runtime": {
+          "lib/net7.0/Dapper.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.1.35.13827"
+          }
         }
       },
       "ServiceStack.Interfaces/8.3.0": {
@@ -29,6 +38,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Dapper/2.1.35": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-YKRwjVfrG7GYOovlGyQoMvr1/IJdn+7QzNXJxyMh0YfFF5yvDmTYaJOVYWsckreNjGsGSEtrMTpnzxTUq/tZQw==",
+      "path": "dapper/2.1.35",
+      "hashPath": "dapper.2.1.35.nupkg.sha512"
     },
     "ServiceStack.Interfaces/8.3.0": {
       "type": "package",

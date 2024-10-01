@@ -1,6 +1,7 @@
 ﻿using Application.Interfaces.Services;
 using Application.Services;
 using Domain.Entities;
+using Domain.Entities.DTOs;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -87,18 +88,5 @@ namespace API_BASE.Controllers
                 return StatusCode(500, new { Status = "error", Message = "An error occurred while updating the user", Error = ex.Message });
             }
         }
-
-        [HttpGet("permissions")]
-        public async Task<IActionResult> GetUserPermissionsAsync(string userName, string codeModule)
-        {
-            var permissions = await _userService.GetUserPermissionsAsync(userName, codeModule);
-            return Ok(permissions);
-        }
-        /*[HttpGet("GetUserPermissions")]
-        public async Task<IActionResult> GetUserPermissions([FromQuery] string query)
-        {
-            var userPermissions = await _userService.ExecuteSqlAsync<UserPermission>(query);
-            return Ok(userPermissions);
-        }*/
     }
 }

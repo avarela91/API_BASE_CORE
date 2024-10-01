@@ -1,4 +1,5 @@
 ﻿using Domain.Entities;
+using Domain.Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,7 @@ namespace Application.Interfaces.Repositories
 {
     public interface IUserRepository:IGenericRepository<User>
     {
+        Task<IEnumerable<UserPermission>> GetUserPermissionsAsync(string username, string moduleCode);
     }
 
 }

@@ -1,7 +1,9 @@
 ﻿using Application.Interfaces.Repositories;
 using Application.Interfaces.Services;
 using Domain.Entities;
+using Domain.Entities.DTOs;
 using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,12 +38,9 @@ namespace Application.Services
         {
            await _userRepository.UpdateAsync(user);
         }
-       
-        public async Task<IEnumerable<UserPermission>> GetUserPermissionsAsync(string userName, string codeModule)
+        public async Task<IEnumerable<UserPermission>> GetUserPermissionsAsync(string username, string moduleCode)
         {
-            string storedProcedure = "EXEC PermissionByUserAndModule @UserName, @CodeModule";
-            var parameters = new object[] { new SqlParameter("@UserName", userName), new SqlParameter("@CodeModule", codeModule) };
-            return await _userRepository.ExecuteStoredProcedureAsync<UserPermission>(storedProcedure, parameters);
+            return await _userRepository.GetUserPermissionsAsync(username, moduleCode);
         }
     }
 }

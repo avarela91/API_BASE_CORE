@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "suNU0KSGVf4VMqKg8HMU114GkHBTDskk9iMMllrNhJI5VawhQuvLds8RyteV9h1wZVgAuavC/9vqZbhR4jF9Zg==",
+  "dgSpecHash": "w6shl9ZtJYpIWniUbNonxwycWlzPxRwzBFeLaPeTTzvyUCoh8HPBemy/j1BlS/nU/+HlA9h41ccPuyu4fkLWWg==",
   "success": true,
   "projectFilePath": "C:\\Users\\IT\\source\\repos\\Proyectos\\API_BASE\\API_BASE\\API_BASE.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\IT\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\IT\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
+    "C:\\Users\\IT\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
     "C:\\Users\\IT\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.3\\microsoft.aspnetcore.openapi.7.0.3.nupkg.sha512",
     "C:\\Users\\IT\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\IT\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
