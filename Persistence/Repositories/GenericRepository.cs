@@ -6,6 +6,7 @@ using Persistence.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
@@ -63,7 +64,10 @@ namespace Persistence.Repositories
             _context.Entry(entity).State = EntityState.Modified;
             await _context.SaveChangesAsync();
         }
-
+        public async Task<IEnumerable<T>> GetByConditionAsync(Expression<Func<T, bool>> predicate)
+        {
+            return await _context.Set<T>().Where(predicate).ToListAsync();
+        }
         // Método para ejecutar consultas SQL y devolver resultados
         /*public async Task<List<TResult>> ExecuteStoredProcedureAsync<TResult>(string storedProcedure, params object[] parameters) where TResult : class
         {
@@ -71,21 +75,21 @@ namespace Persistence.Repositories
             return await _context.Set<TResult>().FromSqlRaw(sqlQuery).ToListAsync();
             return await _context.Set<TResult>().FromSqlRaw(sqlQuery).AsNoTracking().ToListAsync();
         }*/
-        public async Task<List<TResult>> ExecuteStoredProcedureAsync<TResult>(string storedProcedure, params object[] parameters) where TResult : class
-        {
-            // Formato correcto para la consulta con parámetros
-            /*return await _context.Set<TResult>()
-                .FromSqlRaw(storedProcedure, parameters) // Parámetros seguros
-                .AsNoTracking() // Para consultas de solo lectura
-                .ToListAsync();*/
-            return await _context.Database
-       .SqlQueryRaw<TResult>(storedProcedure, parameters)
-       .ToListAsync();
-        }
+        /* public async Task<List<TResult>> ExecuteStoredProcedureAsync<TResult>(string storedProcedure, params object[] parameters) where TResult : class
+         {
+             // Formato correcto para la consulta con parámetros
+             return await _context.Set<TResult>()
+                 .FromSqlRaw(storedProcedure, parameters) // Parámetros seguros
+                 .AsNoTracking() // Para consultas de solo lectura
+                 .ToListAsync();
+             return await _context.Database
+        .SqlQueryRaw<TResult>(storedProcedure, parameters)
+        .ToListAsync();
+         }*/
         // Método para ejecutar consultas SQL que no devuelvan resultados (INSERT, UPDATE, DELETE)
-        public int ExecuteNonQuery(string sqlQuery, params object[] parameters)
+        /*public int ExecuteNonQuery(string sqlQuery, params object[] parameters)
         {
             return _context.Database.ExecuteSqlRaw(sqlQuery, parameters);
-        }
+        }*/
     }
 }
