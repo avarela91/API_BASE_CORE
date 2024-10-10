@@ -3,6 +3,7 @@ C:\Users\IT\source\repos\Proyectos\API_BASE\API_BASE\obj\Debug\net7.0\API_BASE.G
 C:\Users\IT\source\repos\Proyectos\API_BASE\API_BASE\obj\Debug\net7.0\API_BASE.AssemblyInfoInputs.cache
 C:\Users\IT\source\repos\Proyectos\API_BASE\API_BASE\obj\Debug\net7.0\API_BASE.AssemblyInfo.cs
 C:\Users\IT\source\repos\Proyectos\API_BASE\API_BASE\obj\Debug\net7.0\API_BASE.csproj.CoreCompileInputs.cache
+C:\Users\IT\source\repos\Proyectos\API_BASE\API_BASE\obj\Debug\net7.0\API_BASE.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\IT\source\repos\Proyectos\API_BASE\API_BASE\obj\Debug\net7.0\API_BASE.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\IT\source\repos\Proyectos\API_BASE\API_BASE\bin\Debug\net7.0\appsettings.Development.json
 C:\Users\IT\source\repos\Proyectos\API_BASE\API_BASE\bin\Debug\net7.0\appsettings.json
@@ -76,4 +77,3 @@ C:\Users\IT\source\repos\Proyectos\API_BASE\API_BASE\obj\Debug\net7.0\refint\API
 C:\Users\IT\source\repos\Proyectos\API_BASE\API_BASE\obj\Debug\net7.0\API_BASE.pdb
 C:\Users\IT\source\repos\Proyectos\API_BASE\API_BASE\obj\Debug\net7.0\API_BASE.genruntimeconfig.cache
 C:\Users\IT\source\repos\Proyectos\API_BASE\API_BASE\obj\Debug\net7.0\ref\API_BASE.dll
-C:\Users\IT\source\repos\Proyectos\API_BASE\API_BASE\obj\Debug\net7.0\API_BASE.MvcApplicationPartsAssemblyInfo.cs

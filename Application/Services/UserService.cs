@@ -7,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -37,6 +38,10 @@ namespace Application.Services
         public async Task UpdateUserAsync(User user)
         {
            await _userRepository.UpdateAsync(user);
+        }
+        public async Task<IEnumerable<User>> GetUsersByConditionsAsync(Expression<Func<User, bool>> predicate)
+        {
+            return await _userRepository.GetByConditionAsync(predicate);
         }
         public async Task<IEnumerable<UserPermission>> GetUserPermissionsAsync(string username, string moduleCode)
         {
