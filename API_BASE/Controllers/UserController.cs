@@ -5,6 +5,8 @@ using Domain.Entities.DTOs;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using ServiceStack.Messaging;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace API_BASE.Controllers
 {
@@ -22,54 +24,68 @@ namespace API_BASE.Controllers
         [HttpGet("GetAllUsers")]
         public async Task<IActionResult> GetAllUsers()
         {
-            var items = await _userService.GetAllUsersAsync(false);
-            return Ok(items);
+            try
+            {
+                var items = await _userService.GetAllUsersAsync(false);
+                return Ok(new ApiResponse<IEnumerable<User>>("success", "Records obtained correctly.", items));
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new ApiResponse<object>("error", ex.Message, null));
+            }
+           
         }
        [HttpGet("GetUserById")]
         public async Task<IActionResult> GetUserById(int id)
         {
-            var user = await _userService.GetUserByIdAsync(id);
-            if (user == null)
+            try
             {
-                return NotFound();
+                var user = await _userService.GetUserByIdAsync(id);
+                if (user == null)
+                {
+                    throw new Exception("Not found User with id "+id);
+                }
+                return Ok(new ApiResponse<User>("success", "Records obtained correctly.", user));
             }
-            return Ok(user);
+            catch (Exception ex)
+            {
+                return StatusCode(500, new ApiResponse<object>("error", ex.Message, null));
+            }
+           
         }
 
         [HttpPost("AddUser")]
         public async Task<IActionResult> AddUser(User model)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
             try
             {
+                if (!ModelState.IsValid)
+                {
+                    throw new Exception("Validation failed, review the model data");
+                }            
                 await _userService.AddUserAsync(model);
-
-                return Ok(new {Status="success", Message = "User added successfully, UserId = "+ model.Id_User });
+                return Ok(new ApiResponse<int>("success", "Records obtained correctly.", model.Id_User));
             }
             catch (Exception ex)
             {
-                return StatusCode(500, new { Status = "error", Message = "An error occurred while adding the user, Error = " + ex.Message });
+                return StatusCode(500, new ApiResponse<object>("error", "An error occurred while adding the user, Error = " + ex.Message, null));
             }
         }
 
         [HttpPut("UpdateUser")]
         public async Task<IActionResult> UpdateUser([FromBody] User user)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
             try
             {
+                if (!ModelState.IsValid)
+                {
+                    throw new Exception("Validation failed, review the model data");
+                }
+            
                 var userById = await _userService.GetUserByIdAsync(user.Id_User);
                 if (user == null)
                 {
-                    return NotFound(new { Status = "error", Message = "User not found" });
+                    throw new Exception("User not found");
                 }
 
                 userById.Name = user.Name;
@@ -80,12 +96,11 @@ namespace API_BASE.Controllers
                 userById.Active = user.Active;
 
                 await _userService.UpdateUserAsync(userById);
-
-                return Ok(new { Status = "success", Message = "User updated successfully, UserId = "+ user.Id_User });
+                return Ok(new ApiResponse<int>("success", "Records obtained correctly.", user.Id_User));
             }
             catch (Exception ex)
             {
-                return StatusCode(500, new { Status = "error", Message = "An error occurred while updating the user", Error = ex.Message });
+                return StatusCode(500, new ApiResponse<object>("error", "An error occurred while adding the user. "+ ex.Message, null));
             }
         }
     }

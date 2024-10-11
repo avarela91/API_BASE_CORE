@@ -1,4 +1,6 @@
 ﻿using Application.Interfaces.Services;
+using Domain.Entities;
+using Domain.Entities.DTOs;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,8 +20,16 @@ namespace API_BASE.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllItems()
         {
-            var items = await _itemService.GetAllItemsAsync();
-            return Ok(items);
+            try
+            {
+                var items = await _itemService.GetAllItemsAsync();
+                return Ok(new ApiResponse<IEnumerable<Item>>("success", "Records obtained correctly",items));
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new ApiResponse<object>("error", ex.Message, null));
+            }
+            
         }
     }
 }

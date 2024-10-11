@@ -40,26 +40,15 @@ namespace API_BASE.Controllers
                     throw new Exception("Nombre de usuario o contraseña incorrectos.");
                 }
                 var permissions = await _userService.GetUserPermissionsAsync(loginModel.UserName, loginModel.Module);
-                /* var responseData = new ResponseDataLoginApp
-                 {
-                     status = "success",
-                     msj = "Permisos del usuario obtenidos correctamente.",
-                     CodeError = 0,
-                     permissions = permission
-                 };*/
-                return Ok(permissions);
-                //}
+                return Ok(new ApiResponse<IEnumerable<UserPermission>>(
+                            "success",
+                            "Login exitoso. Permisos obtenidos correctamente.",
+                            permissions
+                        ));
             }
             catch (Exception ex)
             {
-                return StatusCode(500, new { Status = "error", Message = "An error occurred while logging in", Error = ex.Message });
-                /*return StatusCode(500, new ResponseDataLoginApp
-                {
-                    status = "error",
-                    msj = $"Error: {ex.Message}",
-                    CodeError = 1,
-                    permissions = null
-                });*/
+                return StatusCode(500, new ApiResponse<object>("error", ex.Message, null));
             }
         }
 
@@ -69,11 +58,11 @@ namespace API_BASE.Controllers
             try
             {
                 var permissions = await _userService.GetUserPermissionsAsync(username, moduleCode);
-                return Ok(permissions);
+                return Ok(new ApiResponse<IEnumerable<UserPermission>>("success", "Records obtained correctly",permissions));
             }
             catch (Exception ex)
             {
-                return StatusCode(500, new { Status = "error", Message = "An error occurred while updating the user", Error = ex.Message });
+                return StatusCode(500, new ApiResponse<object>("error", ex.Message, null));
             }
         }
     }
