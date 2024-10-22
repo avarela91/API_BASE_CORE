@@ -9,7 +9,7 @@ namespace Application.Interfaces.Services
 {
     public interface IItemService
     {
-        Task<IEnumerable<Item>> GetAllItemsAsync();
+        Task<IEnumerable<Item>> GetAllItemsAsync(bool? onlyActiveRecords = true);
         Task<Item> GetItemByIdAsync(int id);
         Task AddItemAsync(Item item);
         Task UpdateItemAsync(Item item);

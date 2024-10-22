@@ -12,8 +12,14 @@ namespace Domain.Entities
     [ConnectionName("DefaultConnection")]
     public class Item
     {
-        [PrimaryKey]
+        [Key]
+        public int Id_Item { get; set; }
         public string ItemCode { get; set; }
         public string ItemName { get; set; }
+        public string Create_User { get; set; }
+        public DateTime Create_Date { get; set; }
+        public string? Modify_User { get; set; }
+        public DateTime? Modify_Date { get; set; }
+        public bool Active { get; set; }
     }
 }
