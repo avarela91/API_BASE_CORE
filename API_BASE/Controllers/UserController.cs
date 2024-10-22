@@ -26,7 +26,7 @@ namespace API_BASE.Controllers
         {
             try
             {
-                var items = await _userService.GetAllUsersAsync(false);
+                var items = await _userService.GetAllUsersAsync();
                 return Ok(new ApiResponse<IEnumerable<User>>("success", "Records obtained correctly.", items));
             }
             catch (Exception ex)
@@ -45,7 +45,7 @@ namespace API_BASE.Controllers
                 {
                     throw new Exception("Not found User with id "+id);
                 }
-                return Ok(new ApiResponse<User>("success", "Records obtained correctly.", user));
+                return Ok(new ApiResponse<User>("success", "Record obtained correctly.", user));
             }
             catch (Exception ex)
             {
@@ -64,7 +64,7 @@ namespace API_BASE.Controllers
                     throw new Exception("Validation failed, review the model data");
                 }            
                 await _userService.AddUserAsync(model);
-                return Ok(new ApiResponse<int>("success", "Records obtained correctly.", model.Id_User));
+                return Ok(new ApiResponse<int>("success", "Record save correctly.", model.Id_User));
             }
             catch (Exception ex)
             {

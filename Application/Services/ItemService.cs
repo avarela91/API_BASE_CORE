@@ -18,9 +18,9 @@ namespace Application.Services
             _itemRepository = itemRepository;
         }
 
-        public async Task<IEnumerable<Item>> GetAllItemsAsync()
+        public async Task<IEnumerable<Item>> GetAllItemsAsync(bool? onlyActiveRecords = true)
         {
-            return await _itemRepository.GetAllAsync();
+            return await _itemRepository.GetAllAsync(onlyActiveRecords);
         }
 
         public async Task<Item> GetItemByIdAsync(int id)
