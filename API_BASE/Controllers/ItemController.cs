@@ -18,7 +18,7 @@ namespace API_BASE.Controllers
             _itemService = itemService;
         }
 
-        [HttpGet]
+        [HttpGet("GetAllItems")]
         public async Task<IActionResult> GetAllItems()
         {
             try
