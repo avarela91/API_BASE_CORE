@@ -14,9 +14,17 @@ namespace Domain.Entities
     {
         [Key]
         public int Id_Item { get; set; }
-        public string ItemCode { get; set; }
-        public string ItemName { get; set; }
-        public string Create_User { get; set; }
+        public int Id_Department { get; set; }
+        public int Id_Category { get; set; }
+        public int Id_Supplier { get; set; }
+        public string? ItemCode { get; set; }
+        public string? ItemName { get; set; }
+        public string? ItemDescription { get; set; }
+        public string? CodeBars { get; set; }
+        public decimal ItemCost { get; set; }
+        public string? Create_User { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime Create_Date { get; set; }
         public string? Modify_User { get; set; }
         public DateTime? Modify_Date { get; set; }

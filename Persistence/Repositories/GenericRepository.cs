@@ -1,4 +1,5 @@
 ﻿using Application.Interfaces.Repositories;
+using Domain.Entities;
 using Domain.Entities.CustomAttributes;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -44,6 +45,7 @@ namespace Persistence.Repositories
         {
             if (onlyActiveRecords.HasValue && onlyActiveRecords.Value)
                 return await _context.Set<T>().Where(e => EF.Property<bool>(e, "Active") == onlyActiveRecords).ToListAsync();
+           
             else
                 return await _context.Set<T>().ToListAsync();
         }
